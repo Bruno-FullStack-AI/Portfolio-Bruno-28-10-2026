@@ -1,0 +1,34 @@
+COMO SUBIR ESTA PASTA NO GITHUB
+
+IMPORTANTE:
+Use a pasta "pasta-para-github".
+No GitHub, envie o CONTEÚDO de dentro dela, não a pasta de trabalho "portfolio".
+
+PASSO A PASSO SIMPLES
+
+1. Entre no GitHub e clique em "New repository".
+2. Coloque o nome: portfolio
+3. Deixe o repositório como "Public" e clique em "Create repository".
+4. Dentro do repositório, clique em "Add file" > "Upload files".
+5. Abra a pasta "pasta-para-github" no seu computador.
+6. Selecione e arraste para o GitHub:
+   - index.html
+   - pasta assets
+   - favicon.svg
+   - preview.png
+   - README.md
+   - robots.txt
+   - .nojekyll (se aparecer; é um arquivo oculto e não é obrigatório)
+7. Clique em "Commit changes".
+8. Depois vá em "Settings" > "Pages".
+9. Em "Build and deployment", escolha:
+   - Source: Deploy from a branch
+   - Branch: main
+   - Folder: /(root)
+10. Clique em "Save" e aguarde mais ou menos 1 minuto.
+
+O GitHub vai mostrar um link parecido com este:
+https://SEU-USUARIO.github.io/portfolio/
+
+Depois que esse link existir, envie ele aqui na conversa.
+Aí eu finalizo o SEO com canonical e sitemap.xml usando a URL verdadeira.

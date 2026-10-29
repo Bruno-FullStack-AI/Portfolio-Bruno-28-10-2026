@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Bruno Lima</title>
+  <desc id="desc">Monograma BL premium em laranja metálico sobre fundo preto.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="82%">
+      <stop offset="0%" stop-color="#2b1503"/>
+      <stop offset="42%" stop-color="#0a0705"/>
+      <stop offset="100%" stop-color="#010101"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7a00" stop-opacity=".38"/>
+      <stop offset="55%" stop-color="#ff6a00" stop-opacity=".13"/>
+      <stop offset="100%" stop-color="#ff6a00" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4d00"/>
+      <stop offset="38%" stop-color="#ff8a00"/>
+      <stop offset="68%" stop-color="#ffd08a"/>
+      <stop offset="100%" stop-color="#ff6500"/>
+    </linearGradient>
+    <linearGradient id="letters" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe0aa"/>
+      <stop offset="30%" stop-color="#ffb347"/>
+      <stop offset="58%" stop-color="#ff8500"/>
+      <stop offset="100%" stop-color="#ff5200"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="tileClip">
+      <rect x="24" y="24" width="464" height="464" rx="118"/>
+    </clipPath>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#ff6a00" flood-opacity=".28"/>
+    </filter>
+    <filter id="letterShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#000000" flood-opacity=".62"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <rect x="24" y="24" width="464" height="464" rx="118" fill="url(#bg)"/>
+  </g>
+
+  <g clip-path="url(#tileClip)">
+    <circle cx="256" cy="238" r="190" fill="url(#halo)"/>
+    <path d="M24 24h464v150c-118 62-346 62-464 0V24Z" fill="url(#shine)"/>
+
+    <!-- Rede de partículas discreta, conectando o ícone ao fundo do site -->
+    <g fill="none" stroke="#ff9500" stroke-width="4" stroke-linecap="round" stroke-opacity=".34">
+      <path d="M105 142 158 102 218 130"/>
+      <path d="M318 390 384 354 424 398"/>
+      <path d="M384 354 402 292"/>
+    </g>
+    <g fill="#ffb347">
+      <circle cx="105" cy="142" r="7" opacity=".78"/>
+      <circle cx="158" cy="102" r="5" opacity=".62"/>
+      <circle cx="218" cy="130" r="6" opacity=".72"/>
+      <circle cx="318" cy="390" r="6" opacity=".68"/>
+      <circle cx="384" cy="354" r="7" opacity=".8"/>
+      <circle cx="424" cy="398" r="5" opacity=".6"/>
+      <circle cx="402" cy="292" r="5" opacity=".55"/>
+    </g>
+
+    <!-- Órbita premium ao redor do monograma -->
+    <ellipse cx="256" cy="256" rx="181" ry="121" transform="rotate(-17 256 256)"
+             fill="none" stroke="#ff8500" stroke-opacity=".20" stroke-width="5"
+             stroke-linecap="round" stroke-dasharray="3 15"/>
+  </g>
+
+  <rect x="24" y="24" width="464" height="464" rx="118" fill="none" stroke="url(#border)" stroke-width="12"/>
+  <rect x="47" y="47" width="418" height="418" rx="100" fill="none" stroke="#ffffff" stroke-opacity=".09" stroke-width="2"/>
+
+  <text x="256" y="323" text-anchor="middle"
+        font-family="Poppins, Montserrat, 'Arial Black', Arial, sans-serif"
+        font-size="198" font-weight="900" letter-spacing="-12"
+        fill="url(#letters)" filter="url(#letterShadow)">BL</text>
+
+  <rect x="176" y="354" width="160" height="10" rx="5" fill="url(#border)" opacity=".94"/>
+</svg>

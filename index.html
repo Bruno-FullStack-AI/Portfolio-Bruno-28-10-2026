@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bruno Lima — Desenvolvedor Full Stack & Inteligência Artificial | Fortaleza, CE</title>
+<meta name="description" content="Bruno Lima — Desenvolvedor Full Stack e Front-end Júnior em Fortaleza, CE, com especial interesse em Inteligência Artificial. Desenvolvimento web com HTML, CSS e JavaScript, e-commerce e integrações de APIs.">
+<meta name="theme-color" content="#030303">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bruno Lima — Desenvolvedor Full Stack & Inteligência Artificial">
+<meta property="og:description" content="Portfólio de Bruno Lima: desenvolvimento web, IA aplicada, e-commerce e integrações de APIs.">
+<meta property="og:image" content="assets/bruno-lima-hero-sem-fundo-v3.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#030303; --bg-2:#080808; --card:#0c0c0c; --card-2:#101010;
+  --orange:#ff6a00; --orange-2:#ff9500; --amber:#ffb347;
+  --grad:linear-gradient(135deg,#ff5500 0%,#ff7a00 45%,#ffa200 100%);
+  --border:rgba(255,122,0,.22); --border-soft:rgba(255,255,255,.08);
+  --text:#ffffff; --muted:#a8a8a8; --muted-2:#7a7a7a;
+  --radius:18px; --glow:0 0 40px rgba(255,106,0,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4,.logo-text{font-family:'Poppins',system-ui,sans-serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid rgba(255,149,0,.92);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+::selection{background:var(--orange);color:#000}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#0a0a0a}
+::-webkit-scrollbar-thumb{background:linear-gradient(#ff5500,#ffa200);border-radius:8px}
+.container{width:min(1180px,92%);margin:0 auto;position:relative;z-index:2}
+section{padding:96px 0;position:relative}
+.glow-orb{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none;z-index:0}
+.grid-bg{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,122,0,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,122,0,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:1001;box-shadow:0 0 12px rgba(255,122,0,.8)}
+#particleDrift{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.8}
+
+/* ============ HEADER ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(3,3,3,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,122,0,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;letter-spacing:.2px}
+.logo-mark{width:42px;height:42px;flex:0 0 42px;border-radius:12px;filter:drop-shadow(0 0 14px rgba(255,106,0,.48))}
+.nav-contact-mobile{display:none}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:#d9d9d9;position:relative;padding:6px 0;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange-2)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:9px;justify-content:center;padding:13px 28px;border-radius:999px;font-weight:600;font-size:.95rem;font-family:'Poppins',sans-serif;cursor:pointer;border:none;transition:transform .25s,box-shadow .25s,color .25s,border-color .25s;white-space:nowrap}
+.btn-primary{background:var(--grad);color:#140800;box-shadow:0 8px 28px rgba(255,106,0,.4)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(255,106,0,.55)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange-2);transform:translateY(-3px);box-shadow:var(--glow)}
+.btn-sm{padding:10px 22px;font-size:.88rem}
+.hamburger{display:none;background:none;border:1px solid var(--border);border-radius:10px;width:44px;height:44px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--orange-2);border-radius:2px}
+
+/* ============ HERO ============ */
+.hero{padding:150px 0 72px;overflow:hidden}
+.hero .container{width:min(1240px,94%)}
+.hero-grid{display:grid;grid-template-columns:1.06fr .88fr .54fr;gap:30px;align-items:center}
+.hero-copy{order:1}.hero-visual{order:2}.hero-panel{order:3}
+.hero-visual{position:relative;min-height:600px;display:flex;align-items:flex-end;justify-content:center;isolation:isolate}
+.hero-visual::before{content:'';position:absolute;left:50%;top:45%;width:116%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,102,0,.34) 0%,rgba(255,102,0,.17) 34%,rgba(255,102,0,.055) 57%,transparent 72%);filter:blur(10px);z-index:-3;pointer-events:none}
+.hero-visual::after{content:'';position:absolute;left:50%;bottom:-10px;width:88%;height:104px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse,rgba(255,102,0,.25) 0%,rgba(0,0,0,.78) 52%,transparent 74%);filter:blur(18px);z-index:-1;pointer-events:none}
+.hero-orbit{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;z-index:-2}
+.orbit-one{width:86%;aspect-ratio:1;border:1px solid rgba(255,142,0,.20)}
+.orbit-two{width:106%;aspect-ratio:1;border:1px solid rgba(255,142,0,.10)}
+.hero-cutout-wrap{position:relative;width:min(112%,560px);height:600px;margin-bottom:-12px;z-index:1}
+.hero-cutout-wrap::before{content:'';position:absolute;left:50%;top:31%;width:76%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,128,0,.42) 0%,rgba(255,102,0,.17) 43%,transparent 70%);filter:blur(20px);z-index:-1;pointer-events:none}
+.hero-cutout{width:100%;height:100%;object-fit:cover;object-position:center top;filter:drop-shadow(0 0 20px rgba(255,106,0,.30)) drop-shadow(0 28px 42px rgba(0,0,0,.72))}
+.float-chip{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;background:rgba(12,12,12,.88);border:1px solid rgba(255,122,0,.5);border-radius:14px;padding:10px 16px;font-family:'Poppins',sans-serif;font-weight:700;font-size:.88rem;color:var(--amber);box-shadow:0 10px 30px rgba(0,0,0,.6),0 0 22px rgba(255,106,0,.3);backdrop-filter:blur(8px);animation:floaty 4.5s ease-in-out infinite}
+.chip-code{right:-4px;bottom:104px}.chip-ui{left:-6px;top:92px;animation-delay:1.2s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.badge{display:inline-block;padding:7px 18px;border-radius:999px;font-size:.85rem;font-weight:600;color:#ffd9ae;background:rgba(255,106,0,.13);border:1px solid rgba(255,122,0,.45);box-shadow:inset 0 0 18px rgba(255,106,0,.12);margin-bottom:22px;font-family:'Poppins',sans-serif}
+.hero h1{font-size:clamp(2rem,3.4vw,2.72rem);line-height:1.12;font-weight:800;letter-spacing:-.5px}
+.gradient-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(255,122,0,.35))}
+.hero p.lead{color:var(--muted);font-size:1.05rem;margin:22px 0 30px;max-width:500px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-meta{margin-top:20px;color:var(--muted);font-size:.92rem}
+.hero-meta b{color:var(--orange-2);font-weight:600}
+.hero-stats{display:flex;margin-top:40px;border-top:1px solid var(--border-soft);padding-top:28px}
+.stat{flex:1}.stat + .stat{border-left:1px solid var(--border-soft);padding-left:24px}
+.stat b{font-family:'Poppins',sans-serif;font-size:1.7rem;font-weight:800}
+.stat b em{font-style:normal;color:var(--orange-2)}
+.stat small{display:block;color:var(--muted-2);font-size:.8rem;margin-top:2px}
+.hero-panel{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(20,20,20,.90),rgba(6,6,6,.94));border:1px solid rgba(255,122,0,.30);border-radius:22px;padding:22px;box-shadow:0 24px 54px rgba(0,0,0,.58),0 0 34px rgba(255,106,0,.13),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero-panel::before{content:'';position:absolute;top:0;left:22px;right:22px;height:2px;border-radius:2px;background:var(--grad);opacity:.9}
+.hero-panel::after{content:'';position:absolute;width:190px;height:190px;right:-86px;top:-86px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,0,.24),transparent 68%);pointer-events:none}
+.hero-panel h2{display:flex;align-items:center;gap:9px;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#ffd9ae;margin-bottom:15px}
+.hero-panel h2::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--grad);box-shadow:0 0 14px rgba(255,122,0,.9);flex:0 0 8px}
+.hero-services{list-style:none;display:grid;gap:9px;margin-bottom:20px;position:relative;z-index:1}
+.hero-services li{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid rgba(255,255,255,.07);background:rgba(255,106,0,.055);border-radius:12px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem;color:#f3f3f3;white-space:nowrap}
+.hero-services svg{width:19px;height:19px;flex:0 0 19px;color:var(--orange-2);filter:drop-shadow(0 0 7px rgba(255,122,0,.35))}
+.hero-mini-stats{display:grid;gap:13px;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;position:relative;z-index:1}
+.hero-mini-stats div{display:flex;align-items:baseline;gap:10px}
+.hero-mini-stats b{font-family:'Poppins',sans-serif;font-size:1.62rem;line-height:1;font-weight:800;color:#fff;min-width:58px}
+.hero-mini-stats b em{font-style:normal;color:var(--orange-2)}
+.hero-mini-stats small{font-family:'Poppins',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted-2);line-height:1.35}
+.hero-signature{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.08);margin-top:18px;padding-top:16px;position:relative;z-index:1}
+.hero-signature img{width:46px;height:46px;flex:0 0 46px;border-radius:13px;filter:drop-shadow(0 0 12px rgba(255,106,0,.35))}
+.hero-signature p{line-height:1.2}
+.hero-signature strong{display:block;font-family:'Poppins',sans-serif;font-size:1.22rem;font-weight:900;letter-spacing:.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-signature span{display:block;color:var(--muted);font-size:.76rem;line-height:1.4;margin-top:2px}
+
+/* ============ FEATURES ============ */
+.features{padding:34px 0;border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);background:rgba(255,106,0,.02)}
+.features-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.feature{display:flex;align-items:center;gap:16px;padding:10px 26px}
+.feature + .feature{border-left:1px solid var(--border-soft)}
+.feature-icon{width:52px;height:52px;flex:0 0 52px;display:grid;place-items:center;border-radius:50%;border:1.5px solid rgba(255,122,0,.5);color:var(--orange-2);background:rgba(255,106,0,.07);box-shadow:inset 0 0 16px rgba(255,106,0,.12)}
+.feature h4{font-size:.95rem;font-weight:600;line-height:1.35}
+
+/* ============ SECTION HEADS ============ */
+.eyebrow{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--orange-2);margin-bottom:10px}
+.sec-head-split p.eyebrow,.sec-head-center p.eyebrow{color:var(--orange-2)}
+.sec-title{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:800;line-height:1.15}
+.sec-head-split{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px;flex-wrap:wrap}
+.sec-head-split p{color:var(--muted);max-width:420px;font-size:.97rem}
+.sec-head-center{text-align:center;margin-bottom:48px}
+.sec-head-center p{color:var(--muted);margin-top:12px}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:start}
+.about-text p{color:#cdcdcd;margin-bottom:17px;font-size:1rem}
+.about-text p strong{color:#fff}
+.info-card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid rgba(255,122,0,.3);border-radius:20px;padding:30px 28px;box-shadow:0 0 30px rgba(255,106,0,.08)}
+.info-card h3{font-size:1.1rem;margin-bottom:12px;color:var(--amber)}
+.info-row{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-bottom:1px solid var(--border-soft);font-size:.92rem}
+.info-row:last-of-type{border-bottom:none}
+.info-row span{color:var(--muted-2);flex:0 0 auto}
+.info-row b{font-weight:600;text-align:right}
+.info-card .btn{width:100%;margin-top:18px}
+
+/* ============ SKILLS ============ */
+.skills-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.skill-card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--border-soft);border-radius:var(--radius);padding:28px 16px 24px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s}
+.skill-card:hover{transform:translateY(-8px);border-color:rgba(255,122,0,.6);box-shadow:0 18px 38px rgba(0,0,0,.55),0 0 30px rgba(255,106,0,.22)}
+.skill-icon{height:56px;display:grid;place-items:center;margin-bottom:16px;color:var(--orange-2)}
+.skill-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.skill-card p{color:var(--muted-2);font-size:.8rem;line-height:1.5;min-height:38px}
+.skill-tag{display:inline-block;margin-top:13px;font-size:.68rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:6px 11px;border-radius:999px;color:#ffc890;background:rgba(255,106,0,.1);border:1px solid rgba(255,122,0,.35);font-family:'Poppins',sans-serif}
+.tools-row{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tools-row b{font-family:'Poppins',sans-serif;font-size:.92rem;margin-right:4px}
+.tool-chip{font-size:.82rem;font-weight:600;padding:8px 15px;border-radius:999px;color:#e8e8e8;background:#111;border:1px solid rgba(255,255,255,.16)}
+.tool-chip:hover{border-color:rgba(255,122,0,.6);color:var(--amber)}
+
+/* ============ PROJECTS ============ */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.project-card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--border-soft);border-radius:20px;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;display:flex;flex-direction:column}
+.project-card:hover{transform:translateY(-10px);border-color:rgba(255,122,0,.65);box-shadow:0 24px 50px rgba(0,0,0,.6),0 0 36px rgba(255,106,0,.25)}
+.project-thumb{position:relative;overflow:hidden;display:block}
+.project-thumb img{width:100%;height:215px;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.project-thumb img.top{object-position:top center}
+.project-card:hover .project-thumb img{transform:scale(1.07)}
+.project-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));pointer-events:none}
+.live-badge{position:absolute;top:14px;left:14px;z-index:2;font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.5px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.78);border:1px solid rgba(255,122,0,.6);color:var(--amber)}
+.project-go{position:absolute;right:16px;bottom:14px;z-index:2;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#140800;font-weight:900;font-size:1.05rem;box-shadow:0 8px 22px rgba(255,106,0,.5);transition:transform .3s}
+.project-card:hover .project-go{transform:rotate(-38deg) scale(1.08)}
+.project-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.project-body h3{font-size:1.16rem;font-weight:700}
+.project-body p{color:var(--muted);font-size:.91rem;margin:10px 0 18px;flex:1}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:.75rem;font-weight:600;padding:6px 12px;border-radius:999px;color:#ffc890;background:rgba(255,106,0,.09);border:1px solid rgba(255,122,0,.32)}
+.project-link{margin-top:16px;color:var(--orange-2);font-weight:600;font-size:.9rem;font-family:'Poppins',sans-serif}
+.project-link:hover{text-decoration:underline}
+
+/* ============ SERVICES ============ */
+#services{background:linear-gradient(180deg,transparent,rgba(255,106,0,.03),transparent)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--border-soft);border-radius:20px;padding:36px 30px;transition:transform .35s,border-color .35s,box-shadow .35s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.service-card:hover{transform:translateY(-8px);border-color:rgba(255,122,0,.6);box-shadow:0 22px 44px rgba(0,0,0,.55),0 0 32px rgba(255,106,0,.2)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;color:var(--orange-2);border:1.5px solid rgba(255,122,0,.55);background:rgba(255,106,0,.08);box-shadow:inset 0 0 18px rgba(255,106,0,.15),0 0 20px rgba(255,106,0,.15);margin-bottom:22px}
+.service-card h3{font-size:1.16rem;font-weight:700;margin-bottom:10px}
+.service-card p{color:var(--muted);font-size:.93rem;margin-bottom:20px}
+.service-link{color:var(--orange-2);font-weight:600;font-size:.9rem;font-family:'Poppins',sans-serif}
+
+/* ============ EXPERIENCE / EDUCATION ============ */
+.timeline{position:relative;max-width:900px;margin:0 auto;padding-left:36px}
+.timeline::before{content:'';position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#ff5500,#ffa200,rgba(255,122,0,.1));border-radius:2px}
+.t-item{position:relative;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--border-soft);border-radius:18px;padding:28px 30px;margin-bottom:22px;transition:border-color .3s,transform .3s}
+.t-item:hover{border-color:rgba(255,122,0,.55);transform:translateX(5px)}
+.t-item::before{content:'';position:absolute;left:-36px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 5px rgba(255,106,0,.18),0 0 18px rgba(255,106,0,.7)}
+.t-date{font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--orange-2)}
+.t-item h3{font-size:1.22rem;font-weight:700;margin:6px 0 2px}
+.t-company{color:var(--amber);font-weight:600;font-size:.95rem;margin-bottom:12px}
+.t-item ul{color:var(--muted);font-size:.93rem;padding-left:19px;margin-bottom:16px}
+.t-item ul li{margin-bottom:6px}
+.t-item ul strong{color:#e8e8e8}
+.subhead{font-size:1.45rem;font-weight:800;margin:64px 0 24px;text-align:center}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.edu-card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--border-soft);border-radius:18px;padding:30px;transition:transform .3s,border-color .3s}
+.edu-card:hover{transform:translateY(-6px);border-color:rgba(255,122,0,.55)}
+.edu-card .t-date{margin-bottom:6px;display:block}
+.edu-card h3{font-size:1.15rem;font-weight:700}
+.edu-card h4{color:var(--amber);font-weight:600;font-size:.95rem;margin:3px 0 11px}
+.edu-card p{color:var(--muted);font-size:.92rem}
+.cert-note{text-align:center;color:var(--muted-2);font-size:.9rem;margin-top:20px}
+
+/* ============ HIGHLIGHTS ============ */
+.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.hl-card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--border-soft);border-radius:20px;padding:32px 28px;transition:transform .35s,border-color .35s,box-shadow .35s}
+.hl-card:hover{transform:translateY(-8px);border-color:rgba(255,122,0,.6);box-shadow:0 22px 44px rgba(0,0,0,.55),0 0 30px rgba(255,106,0,.18)}
+.hl-icon{font-size:2.1rem;margin-bottom:14px;filter:drop-shadow(0 0 14px rgba(255,149,0,.45))}
+.hl-photo{width:100%;height:230px;object-fit:cover;object-position:center 42%;border-radius:14px;border:1px solid rgba(255,122,0,.4);margin-bottom:18px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.hl-card h3{font-size:1.08rem;font-weight:700;margin-bottom:9px}
+.hl-card p{color:#cfcfcf;font-size:.93rem;margin-bottom:16px}
+.hl-meta{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--orange-2)}
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center}
+.contact-art{position:relative;height:400px}
+.contact-art img{position:absolute;width:56%;height:300px;object-fit:cover;border-radius:18px;border:1.5px solid rgba(255,122,0,.55);box-shadow:0 24px 50px rgba(0,0,0,.7),0 0 34px rgba(255,106,0,.3);transition:transform .45s}
+.contact-art img:first-child{left:0;top:14px;transform:rotate(-6deg)}
+.contact-art img:last-child{right:0;bottom:0;transform:rotate(5deg)}
+.contact-art img:hover{transform:rotate(0) scale(1.04);z-index:3}
+#contact .sec-title{margin-bottom:10px}
+.contact-sub{color:var(--muted);margin-bottom:22px;max-width:460px}
+.contact-info{display:flex;flex-direction:column;gap:9px;margin-bottom:28px;font-size:.95rem}
+.contact-info a{color:var(--orange-2);font-weight:600}
+.contact-info a:hover{text-decoration:underline}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+.field input,.field textarea{width:100%;background:#0a0a0a;border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:15px 18px;color:#fff;font-family:'Inter',sans-serif;font-size:.94rem;outline:none;transition:border-color .25s,box-shadow .25s;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#6d6d6d}
+.field input:focus,.field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,106,0,.16),0 0 22px rgba(255,106,0,.15)}
+.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#ff453a;box-shadow:0 0 0 3px rgba(255,69,58,.16)}
+.form-foot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:4px}
+.direct-mail{color:var(--muted);font-size:.9rem}
+.direct-mail a{color:var(--orange-2);font-weight:600}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid rgba(255,122,0,.16);padding:42px 0 30px;background:#050505}
+.footer-grid{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.footer-links{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
+.footer-links a{font-size:.9rem;color:#cfcfcf;transition:color .25s}
+.footer-links a:hover{color:var(--orange-2)}
+.socials{display:flex;gap:12px}
+.socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,122,0,.4);color:var(--orange-2);transition:.3s}
+.socials a:hover{background:var(--grad);color:#140800;transform:translateY(-4px);box-shadow:0 10px 24px rgba(255,106,0,.45)}
+.copyright{text-align:right;color:var(--muted-2);font-size:.82rem;margin-top:26px}
+#topBtn{position:fixed;right:26px;bottom:26px;z-index:999;width:50px;height:50px;border-radius:50%;border:none;cursor:pointer;background:var(--grad);color:#140800;font-size:1.2rem;font-weight:900;box-shadow:0 12px 30px rgba(255,106,0,.5);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(14px);transition:opacity .35s,transform .35s,visibility 0s linear .35s}
+#topBtn.show{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition-delay:0s}
+#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,90px);z-index:1100;background:#0e0e0e;border:1px solid rgba(255,122,0,.65);color:#ffd9ae;border-radius:14px;padding:15px 24px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.93rem;box-shadow:0 18px 44px rgba(0,0,0,.65),0 0 30px rgba(255,106,0,.3);opacity:0;visibility:hidden;transition:transform .45s cubic-bezier(.2,.9,.3,1.2),opacity .3s,visibility 0s linear .45s;max-width:92vw;text-align:center}
+#toast.show{transform:translate(-50%,0);opacity:1;visibility:visible;transition-delay:0s}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}.reveal.d5{transition-delay:.5s}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1120px){
+  .hero-grid{grid-template-columns:1.05fr 1fr;gap:42px}
+  .hero-copy{order:1}.hero-visual{order:2}.hero-panel{order:3}
+  .hero-visual{min-height:620px}
+  .hero-cutout-wrap{width:min(112%,650px);height:620px}
+  .hero h1{font-size:clamp(2.05rem,4.35vw,3.18rem)}
+  .hero-panel{grid-column:1/-1;display:grid;grid-template-columns:1.08fr .92fr .78fr;gap:24px;align-items:start}
+  .hero-services{margin-bottom:0}
+  .hero-mini-stats,.hero-signature{border-top:0;border-left:1px solid rgba(255,255,255,.08);margin-top:0;padding:2px 0 2px 24px}
+  .hero-signature{align-self:center}
+}
+@media(max-width:1024px){
+  .skills-grid{grid-template-columns:repeat(3,1fr)}
+  .features-grid{grid-template-columns:repeat(2,1fr);gap:18px 0}
+  .feature:nth-child(3){border-left:none}
+  .cert-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+}
+@media(max-width:880px){
+  section{padding:72px 0}
+  .hero{padding:126px 0 56px}
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{min-height:540px;width:100%;max-width:620px;margin:0 auto}
+  .hero-cutout-wrap{width:min(112%,620px);height:540px}
+  .hero-panel{display:block;width:100%;max-width:620px;margin:0 auto}
+  .hero-mini-stats,.hero-signature{border-left:0;border-top:1px solid rgba(255,255,255,.08);margin-top:18px;padding:18px 0 0}
+  .projects-grid,.services-grid,.highlights-grid,.edu-grid{grid-template-columns:1fr;max-width:540px;margin:0 auto}
+  .contact-art{height:340px;max-width:520px;margin:0 auto;width:100%}
+  .nav-links{position:fixed;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:rgba(5,5,5,.97);border-bottom:1px solid rgba(255,122,0,.25);padding:10px 6%;transform:translateY(-130%);visibility:hidden;pointer-events:none;transition:transform .4s,visibility 0s linear .4s;backdrop-filter:blur(18px)}
+  .nav-links.open{transform:translateY(0);visibility:visible;pointer-events:auto;transition-delay:0s}
+  .nav-contact-mobile{display:block}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:1rem}
+  .hamburger{display:flex}
+  .nav .btn{display:none}
+  .footer-grid{flex-direction:column;text-align:center;justify-content:center}
+  .copyright{text-align:center}
+}
+@media(max-width:560px){
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:1fr}
+  .feature{padding:12px 6px}
+  .feature + .feature{border-left:none;border-top:1px solid var(--border-soft)}
+  .form-row{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap;gap:22px}
+  .stat{flex:1 1 40%}.stat + .stat{border-left:none;padding-left:0}
+  .hero-visual{min-height:455px}
+  .hero-cutout-wrap{width:112%;height:455px}
+  .chip-ui{left:2px;top:64px}.chip-code{right:2px;bottom:72px}
+  .float-chip{padding:8px 12px;font-size:.78rem}
+  .hero-actions .btn{flex:1}
+  .info-row{flex-direction:column;gap:2px}
+  .info-row b{text-align:left}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<canvas id="particleDrift" aria-hidden="true"></canvas>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo" aria-label="Bruno Lima — início">
+      <img class="logo-mark" src="favicon.svg" alt="" width="42" height="42" decoding="async">
+      <span class="logo-text">Bruno Lima</span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#skills">Competências</a></li>
+        <li><a href="#work">Projetos</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#experience">Experiência</a></li>
+        <li class="nav-contact-mobile"><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-sm">Fale Comigo
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+    </a>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="grid-bg"></div>
+  <div class="glow-orb" style="width:520px;height:520px;background:rgba(255,90,0,.20);top:-160px;left:-140px"></div>
+  <div class="glow-orb" style="width:420px;height:420px;background:rgba(255,149,0,.13);top:120px;right:-160px"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="badge">Olá, eu sou Bruno Lima</span>
+      <h1>Eu crio <span class="gradient-text">experiências<br>digitais</span> que geram<br>resultados reais</h1>
+      <p class="lead">Desenvolvedor Full Stack &amp; Front-end com foco em Inteligência Artificial. Construo interfaces e aplicações web modernas, rápidas e centradas no usuário.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">Ver projetos
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <p class="hero-meta">📍 <b>Fortaleza, Ceará — Brasil</b> &nbsp;·&nbsp; Presencial, híbrido ou remoto &nbsp;·&nbsp; Freelancer</p>
+      <div class="hero-stats">
+        <div class="stat"><b><span class="counter" data-target="33">33</span></b><small>Competências no LinkedIn</small></div>
+        <div class="stat"><b><span class="counter" data-target="5">5</span></b><small>Certificações conquistadas</small></div>
+        <div class="stat"><b><span class="counter" data-target="500">500</span><em>+</em></b><small>Conexões no LinkedIn</small></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal d1">
+      <span class="hero-orbit orbit-one" aria-hidden="true"></span>
+      <span class="hero-orbit orbit-two" aria-hidden="true"></span>
+      <div class="hero-cutout-wrap">
+        <img class="hero-cutout" src="assets/bruno-lima-hero-sem-fundo-v3.webp" width="960" height="1080" fetchpriority="high" alt="Bruno Lima — retrato profissional sem moldura, integrado ao fundo preto com brilho laranja e partículas">
+      </div>
+      <div class="float-chip chip-ui">🤖 IA Aplicada</div>
+      <div class="float-chip chip-code">&lt;/&gt; HTML • CSS • JavaScript</div>
+    </div>
+    <aside class="hero-panel reveal d2" aria-labelledby="hero-panel-title">
+      <div>
+        <h2 id="hero-panel-title">O que eu faço</h2>
+        <ul class="hero-services">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>UI/UX &amp; Front-end</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Desenvolvimento Web</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>IA aplicada</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 14a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07L11 5.93"/><path d="M14 10a5 5 0 00-7.07 0L4.1 12.83a5 5 0 007.07 7.07L13 18.07"/></svg>APIs &amp; E-commerce</li>
+        </ul>
+      </div>
+      <div class="hero-mini-stats" aria-label="Destaques">
+        <div><b>2<em>+</em></b><small>Anos em tecnologia</small></div>
+        <div><b>10<em>+</em></b><small>Projetos entregues</small></div>
+        <div><b>5<em>+</em></b><small>Certificações</small></div>
+      </div>
+      <div class="hero-signature">
+        <img src="favicon.svg" alt="" width="46" height="46" decoding="async">
+        <p><strong>BL</strong><span>Código, design<br>e inteligência artificial</span></p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<div class="features">
+  <div class="container features-grid">
+    <div class="feature reveal">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h4>Desenvolvimento<br>Web Responsivo</h4>
+    </div>
+    <div class="feature reveal d1">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+      <h4>Inteligência Artificial<br>Aplicada</h4>
+    </div>
+    <div class="feature reveal d2">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2 3h3l2.6 12.4a1.5 1.5 0 001.5 1.1h7.9a1.5 1.5 0 001.5-1.2L20.5 7H6"/></svg></div>
+      <h4>E-commerce<br>&amp; PDV Integrado</h4>
+    </div>
+    <div class="feature reveal d3">
+      <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 14a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07L11 5.93"/><path d="M14 10a5 5 0 00-7.07 0L4.1 12.83a5 5 0 007.07 7.07L13 18.07"/></svg></div>
+      <h4>Integração de APIs<br>&amp; Webhooks</h4>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="glow-orb" style="width:380px;height:380px;background:rgba(255,90,0,.09);top:20px;left:-200px"></div>
+  <div class="container">
+    <div class="sec-head-split reveal">
+      <div>
+        <p class="eyebrow">Sobre Mim</p>
+        <h2 class="sec-title">Transição para a <span class="gradient-text">Tecnologia</span></h2>
+      </div>
+      <p>Inteligência Artificial · Desenvolvedor Full Stack · Front-end · Freelancer · Desenvolvedor Web</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Com uma trajetória profissional sólida e uma <strong>transição de carreira bem-sucedida para o universo tech</strong>, sou <strong>Desenvolvedor Full Stack e Front-end Júnior</strong>, com especial interesse em <strong>Inteligência Artificial</strong>. Minhas certificações em IA, Cibersegurança e Desenvolvimento Web validam minha dedicação como autodidata.</p>
+        <p>Ao longo da minha carreira, desenvolvi soft skills como <strong>proatividade, capacidade de adaptação e trabalho em equipe</strong>, que agora aplico no desenvolvimento de soluções web com <strong>HTML, CSS e JavaScript</strong>.</p>
+        <p>Atualmente estou na <strong>reta final da graduação em Gestão de TI na UNIP</strong> (com 100% das horas complementares concluídas) e sigo em formação prática no <strong>Dev Club</strong>, conectando gestão, desenvolvimento web e IA para gerar impacto real.</p>
+        <p>Busco minha primeira chance em uma empresa que valorize o <strong>aprendizado contínuo e a inovação</strong>, onde possa crescer e contribuir significativamente. <strong>Vamos conversar sobre como posso agregar ao seu time!</strong></p>
+      </div>
+      <aside class="info-card reveal d1">
+        <h3>📋 Perfil</h3>
+        <div class="info-row"><span>Nome</span><b>Bruno Lima</b></div>
+        <div class="info-row"><span>Localização</span><b>Fortaleza, Ceará, Brasil</b></div>
+        <div class="info-row"><span>Objetivo</span><b>Dev Full Stack / Front-end Júnior</b></div>
+        <div class="info-row"><span>Formato</span><b>Presencial · Híbrido · Remoto</b></div>
+        <div class="info-row"><span>Status</span><b>Autônomo / Freelancer — buscando emprego</b></div>
+        <div class="info-row"><span>Estudando</span><b>Gestão de TI (UNIP) · Dev Club</b></div>
+        <div class="info-row"><span>LinkedIn</span><b>1.112 seguidores · 500+ conexões</b></div>
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/bruno-lima-dev-full-stack-ia/" target="_blank" rel="noopener">Ver perfil no LinkedIn →</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" style="padding-top:20px">
+  <div class="glow-orb" style="width:380px;height:380px;background:rgba(255,90,0,.10);top:0;right:-180px"></div>
+  <div class="container">
+    <div class="sec-head-split reveal">
+      <div>
+        <p class="eyebrow">Minha Expertise</p>
+        <h2 class="sec-title">Competências &amp; <span class="gradient-text">Tecnologias</span></h2>
+      </div>
+      <p>33 competências registradas no LinkedIn, com certificações em IA e Desenvolvimento Web e prática comprovada em um projeto real de e-commerce no ar.</p>
+    </div>
+    <div class="skills-grid">
+      <article class="skill-card reveal">
+        <div class="skill-icon"><svg width="46" height="52" viewBox="0 0 46 52"><path d="M4 2h38l-3.4 42L23 50 7.4 44z" fill="#E34F26"/><path d="M23 46.6l12.7-3.5L38.7 5.4H23z" fill="#FF6525"/><text x="23" y="36" font-family="Poppins,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">5</text></svg></div>
+        <h3>HTML5</h3><p>Estrutura semântica, acessível e sólida</p>
+        <span class="skill-tag">Certificado · Dev Club</span>
+      </article>
+      <article class="skill-card reveal d1">
+        <div class="skill-icon"><svg width="46" height="52" viewBox="0 0 46 52"><path d="M4 2h38l-3.4 42L23 50 7.4 44z" fill="#1572B6"/><path d="M23 46.6l12.7-3.5L38.7 5.4H23z" fill="#33A9DC"/><text x="23" y="36" font-family="Poppins,sans-serif" font-size="24" font-weight="800" fill="#fff" text-anchor="middle">3</text></svg></div>
+        <h3>CSS3</h3><p>Layouts modernos, Flexbox, Grid e responsivo</p>
+        <span class="skill-tag">Fundação Bradesco</span>
+      </article>
+      <article class="skill-card reveal d2">
+        <div class="skill-icon"><svg width="50" height="50" viewBox="0 0 50 50"><rect width="50" height="50" rx="6" fill="#F7DF1E"/><text x="27" y="39" font-family="Poppins,sans-serif" font-size="22" font-weight="800" fill="#000" text-anchor="middle">JS</text></svg></div>
+        <h3>JavaScript</h3><p>Interatividade e lógica para a web</p>
+        <span class="skill-tag">Fundação Bradesco</span>
+      </article>
+      <article class="skill-card reveal d3">
+        <div class="skill-icon"><svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="16" y="16" width="20" height="20" rx="4"/><circle cx="26" cy="26" r="3.6" fill="currentColor" stroke="none"/><path d="M26 6v6M26 40v6M6 26h6M40 26h6M12 12l4 4M36 36l4 4M40 12l-4 4M16 36l-4 4"/></svg></div>
+        <h3>Inteligência Artificial</h3><p>Fluência em IA e aplicação prática em projetos</p>
+        <span class="skill-tag">Certificado · c/ Microsoft</span>
+      </article>
+      <article class="skill-card reveal d4">
+        <div class="skill-icon"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 14a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07L11 5.93"/><path d="M14 10a5 5 0 00-7.07 0L4.1 12.83a5 5 0 007.07 7.07L13 18.07"/></svg></div>
+        <h3>APIs &amp; Webhooks</h3><p>Integrações com WhatsApp e Mercado Pago</p>
+        <span class="skill-tag">Projeto Erisfit</span>
+      </article>
+      <article class="skill-card reveal d5">
+        <div class="skill-icon"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2 3h3l2.6 12.4a1.5 1.5 0 001.5 1.1h7.9a1.5 1.5 0 001.5-1.2L20.5 7H6"/></svg></div>
+        <h3>E-commerce</h3><p>Loja virtual, painel admin e PDV presencial</p>
+        <span class="skill-tag">Projeto Erisfit</span>
+      </article>
+    </div>
+    <div class="tools-row reveal">
+      <b>Ferramentas que uso:</b>
+      <span class="tool-chip">GitHub</span>
+      <span class="tool-chip">Replit Agent</span>
+      <span class="tool-chip">IntelliJ IDEA</span>
+      <span class="tool-chip">Gamma</span>
+      <span class="tool-chip">HubSpot</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="work" style="padding-top:20px">
+  <div class="glow-orb" style="width:420px;height:420px;background:rgba(255,106,0,.10);bottom:-100px;left:-200px"></div>
+  <div class="container">
+    <div class="sec-head-split reveal">
+      <div>
+        <p class="eyebrow">Meu Portfólio</p>
+        <h2 class="sec-title">Projetos em <span class="gradient-text">Destaque</span></h2>
+      </div>
+      <p>Teoria transformada em entrega real: um e-commerce completo no ar, um projeto de estudo com IA a caminho e um trabalho acadêmico nota máxima.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card reveal">
+        <a class="project-thumb" href="https://eris-fit.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir o site Erisfit">
+          <img class="top" src="assets/project-erisfit.png" alt="Página inicial da loja Erisfit — e-commerce de moda fitness" loading="lazy" decoding="async">
+          <span class="live-badge">🔴 NO AR</span>
+          <span class="project-go">↗</span>
+        </a>
+        <div class="project-body">
+          <h3>Erisfit — Loja + Painel Admin</h3>
+          <p>E-commerce completo de moda fitness: loja virtual com catálogo, busca, filtros, carrinho e cupons; checkout via WhatsApp; painel administrativo com métricas em tempo real e exportação CSV; PDV presencial com troco e descontos; e gestão de pedidos e estoque.</p>
+          <div class="tags"><span class="tag">E-commerce</span><span class="tag">Painel Admin</span><span class="tag">PDV</span><span class="tag">WhatsApp</span></div>
+          <a class="project-link" href="https://eris-fit.vercel.app/" target="_blank" rel="noopener">erisfit.vercel.app →</a>
+        </div>
+      </article>
+      <article class="project-card reveal d1">
+        <div class="project-thumb">
+          <img src="assets/project-gta.jpg" alt="Arte conceitual de tela de customização de personagem de jogo em neon laranja" loading="lazy" decoding="async">
+          <span class="live-badge">🛠️ EM DESENVOLVIMENTO</span>
+          <span class="project-go">↗</span>
+        </div>
+        <div class="project-body">
+          <h3>Projeto GTA</h3>
+          <p>Projeto prático desenvolvido com HTML, CSS e JavaScript nas aulas do Dev Club (Rodolfo Mori). Próxima etapa em andamento: inserir Inteligência Artificial para fazer a caracterização do usuário e transformá-lo em um personagem do universo GTA.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">IA</span></div>
+        </div>
+      </article>
+      <article class="project-card reveal d2">
+        <div class="project-thumb">
+          <img src="assets/project-business.jpg" alt="Notebook exibindo dashboard de gestão em neon laranja" loading="lazy" decoding="async">
+          <span class="live-badge">🎓 ACADÊMICO</span>
+          <span class="project-go">↗</span>
+        </div>
+        <div class="project-body">
+          <h3>PIM — CD Pague Menos</h3>
+          <p>Projeto Integrado Multidisciplinar da graduação em Gestão de TI (UNIP) sobre o Centro de Distribuição da Farmácias Pague Menos — <strong style="color:#ffb347">avaliado com nota 10/10</strong> — unindo gestão, processos, dados e eficiência operacional.</p>
+          <div class="tags"><span class="tag">Gestão de TI</span><span class="tag">UNIP</span><span class="tag">Nota 10/10</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="container">
+    <div class="sec-head-center reveal">
+      <p class="eyebrow">O Que Eu Faço</p>
+      <h2 class="sec-title">Meus <span class="gradient-text">Serviços</span></h2>
+      <p>Como freelancer, transformo ideias em soluções digitais reais — do site institucional à loja virtual completa.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></div>
+        <h3>Desenvolvimento Web</h3>
+        <p>Criação de sites responsivos e interfaces modernas com HTML, CSS e JavaScript, com foco em semântica, acessibilidade e estruturas sólidas para projetos escaláveis.</p>
+        <a href="#contact" class="service-link">Pedir orçamento →</a>
+      </article>
+      <article class="service-card reveal d1">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2 3h3l2.6 12.4a1.5 1.5 0 001.5 1.1h7.9a1.5 1.5 0 001.5-1.2L20.5 7H6"/></svg></div>
+        <h3>E-commerce &amp; Sistemas Web</h3>
+        <p>Lojas virtuais completas com painel administrativo, PDV presencial, controle de pedidos e estoque e integrações via APIs/webhooks (WhatsApp e Mercado Pago) — como no projeto Erisfit.</p>
+        <a href="#contact" class="service-link">Pedir orçamento →</a>
+      </article>
+      <article class="service-card reveal d2">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4.5 4.5 0 00-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 006-6L14 13l-3-3 3.7-3.7z"/></svg></div>
+        <h3>Manutenção &amp; Suporte Técnico</h3>
+        <p>Diagnóstico e reparo de hardware e software, otimização de desempenho de sistemas e suporte técnico eficiente e didático — atendimento autônomo a clientes desde 2022.</p>
+        <a href="#contact" class="service-link">Pedir orçamento →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE & EDUCATION ================= -->
+<section id="experience" style="padding-top:20px">
+  <div class="glow-orb" style="width:400px;height:400px;background:rgba(255,106,0,.09);top:60px;right:-200px"></div>
+  <div class="container">
+    <div class="sec-head-center reveal">
+      <p class="eyebrow">Trajetória</p>
+      <h2 class="sec-title">Experiência &amp; <span class="gradient-text">Formação</span></h2>
+      <p>Uma base sólida de trabalho e resultados, agora direcionada ao desenvolvimento de software.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="t-item reveal">
+        <span class="t-date">Jan/2022 — Presente · Freelance</span>
+        <h3>Técnico em Manutenção de Computadores</h3>
+        <p class="t-company">Autônomo — Fortaleza, Ceará, Brasil</p>
+        <ul>
+          <li>Diagnósticos e reparos de <strong>hardware e software</strong>, otimizando o desempenho de sistemas e garantindo a funcionalidade para os clientes.</li>
+          <li>Suporte técnico e atendimento ao cliente, resolvendo problemas de forma eficiente e didática.</li>
+        </ul>
+        <div class="tags"><span class="tag">Manutenção de computadores</span><span class="tag">Hardware</span><span class="tag">Suporte técnico</span></div>
+      </article>
+      <article class="t-item reveal">
+        <span class="t-date">Jan/2020 — Jul/2026 · Tempo integral</span>
+        <h3>Auxiliar de Depósito</h3>
+        <p class="t-company">Farmácias Pague Menos — Fortaleza, Ceará, Brasil</p>
+        <ul>
+          <li>Responsável pela <strong>organização e controle de estoque</strong>, colaborando com a equipe para garantir a eficiência das operações e a satisfação do cliente.</li>
+          <li><strong>"Destaque do Mês" em janeiro:</strong> implementei padronização de fluxos e reorganização do endereçamento com <strong>análise de Curva ABC</strong>, aumentando a velocidade de separação e reduzindo avarias e danos aos produtos.</li>
+        </ul>
+        <div class="tags"><span class="tag">Trabalho em equipe</span><span class="tag">Resolução de problemas</span><span class="tag">Curva ABC</span><span class="tag">Eficiência operacional</span></div>
+      </article>
+    </div>
+
+    <h3 class="subhead reveal">🎓 Formação <span class="gradient-text">Acadêmica</span></h3>
+    <div class="edu-grid">
+      <article class="edu-card reveal">
+        <span class="t-date">Fev/2025 — Dez/2026 · Reta final</span>
+        <h3>Universidade Paulista — UNIP</h3>
+        <h4>Tecnólogo em Gestão de Tecnologia da Informação</h4>
+        <p>Último semestre da graduação, com <strong style="color:#ffb347">100% das horas complementares concluídas</strong> (cursos de IA, Transformação Digital, Fundamentos de TI e Desenvolvimento Web). PIM sobre o CD Pague Menos avaliado com <strong style="color:#ffb347">nota 10/10</strong>.</p>
+      </article>
+      <article class="edu-card reveal d1">
+        <span class="t-date">Dez/2025 — Dez/2027 · Em andamento</span>
+        <h3>Dev Club</h3>
+        <h4>Computer Software Technology / Technician</h4>
+        <p>Formação prática e mão na massa em desenvolvimento web, com trilhas de <strong style="color:#ffb347">HTML, CSS, JavaScript, Inteligência Artificial e análise de dados</strong> — onde nasceram projetos como o Projeto GTA.</p>
+      </article>
+    </div>
+
+    <h3 class="subhead reveal">🏅 Licenças &amp; <span class="gradient-text">Certificados</span></h3>
+    <div class="cert-grid">
+      <article class="edu-card reveal">
+        <span class="t-date">Set/2026 · 4h</span>
+        <h3>Fluência em Inteligência Artificial</h3>
+        <h4>Fundação Bradesco | Escola Virtual — em parceria com a Microsoft</h4>
+        <p>Competências em Inteligência Artificial e aprendizado de máquina aplicadas ao presente do desenvolvimento de software.</p>
+      </article>
+      <article class="edu-card reveal d1">
+        <span class="t-date">Set/2026</span>
+        <h3>Crie um Site Simples usando HTML, CSS e JavaScript</h3>
+        <h4>Fundação Bradesco</h4>
+        <p>Reforço da base de front-end enquanto aplico na prática, com IA e projetos reais — HTML5, CSS e JavaScript.</p>
+      </article>
+      <article class="edu-card reveal d2">
+        <span class="t-date">Dev Club</span>
+        <h3>Certificado de Conclusão — HTML</h3>
+        <h4>Dev Club · Rodolfo Mori</h4>
+        <p>Domínio da base fundamental da web: semântica, acessibilidade e estruturas sólidas para projetos escaláveis.</p>
+      </article>
+    </div>
+    <p class="cert-note reveal">5 licenças e certificados no LinkedIn, incluindo formações em Inteligência Artificial, Cibersegurança e Desenvolvimento Web.</p>
+
+    <h3 class="subhead reveal">⭐ Destaques <span class="gradient-text">Recentes</span></h3>
+    <div class="highlights-grid">
+      <article class="hl-card reveal">
+        <div class="hl-icon">🏆</div>
+        <h3>Destaque do Mês — Pague Menos</h3>
+        <p>Reconhecimento em janeiro pela aplicação prática de conceitos de tecnologia e dados: padronização de fluxos e Curva ABC gerando mais velocidade de separação e menos avarias.</p>
+        <span class="hl-meta">Dados · Eficiência operacional</span>
+      </article>
+      <article class="hl-card reveal d1">
+        <div class="hl-icon">🎓</div>
+        <h3>PIM Nota 10/10 — UNIP</h3>
+        <p>Projeto Integrado Multidisciplinar sobre o Centro de Distribuição da Pague Menos avaliado com nota máxima, aliando a base de gestão da faculdade à prática.</p>
+        <span class="hl-meta">Gestão de TI · Excelência acadêmica</span>
+      </article>
+      <article class="hl-card reveal d2">
+        <img class="hl-photo" src="assets/bruno-lima-siara-robo.jpg" alt="Bruno Lima apertando a mão do robô humanoide Fred no Siará Tech Summit, em Fortaleza" loading="lazy" decoding="async">
+        <h3>🤖 Siará Tech Summit — Fortaleza</h3>
+        <p>Imersão no ecossistema de inovação e IA do Ceará, com interação com o robô humanoide Fred, networking e tendências de automação e IA aplicada na prática.</p>
+        <span class="hl-meta">Inovação · Networking tech</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" style="padding-top:20px">
+  <div class="glow-orb" style="width:440px;height:440px;background:rgba(255,90,0,.12);bottom:-140px;left:-160px"></div>
+  <div class="container contact-grid">
+    <div class="contact-art reveal">
+      <img src="assets/contact-art.jpg" alt="Arte neon laranja de pôr do sol sobre montanhas" loading="lazy" decoding="async">
+      <img src="assets/bruno-lima-evento-ia.jpg" alt="Bruno Lima de braços cruzados em evento de inovação e Inteligência Artificial no Ceará" loading="lazy" decoding="async">
+    </div>
+    <div class="reveal d1">
+      <p class="eyebrow">Entre em Contato</p>
+      <h2 class="sec-title">Vamos <span class="gradient-text">Conversar?</span></h2>
+      <p class="contact-sub">Estou em busca de oportunidades como Desenvolvedor Full Stack / Front-end Júnior e de projetos freelancer. Vamos conversar sobre como posso agregar ao seu time!</p>
+      <div class="contact-info">
+        <span>📍 Fortaleza, Ceará — Brasil (presencial, híbrido ou remoto)</span>
+        <span>💼 <a href="https://www.linkedin.com/in/bruno-lima-dev-full-stack-ia/" target="_blank" rel="noopener">linkedin.com/in/bruno-lima-dev-full-stack-ia</a></span>
+        <span>🛍️ Projeto no ar: <a href="https://eris-fit.vercel.app/" target="_blank" rel="noopener">eris-fit.vercel.app</a></span>
+      </div>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field"><label class="sr-only" for="fName">Seu nome</label><input type="text" id="fName" name="name" autocomplete="name" placeholder="Seu nome" required></div>
+          <div class="field"><label class="sr-only" for="fEmail">Seu e-mail</label><input type="email" id="fEmail" name="email" autocomplete="email" placeholder="Seu e-mail" required></div>
+        </div>
+        <div class="field"><label class="sr-only" for="fSubject">Assunto</label><input type="text" id="fSubject" name="subject" placeholder="Assunto (ex.: vaga Júnior, projeto freelance...)"></div>
+        <div class="field"><label class="sr-only" for="fMsg">Sua mensagem</label><textarea id="fMsg" name="message" rows="4" placeholder="Conte-me sobre a oportunidade ou o projeto..." required></textarea></div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-primary">Enviar Mensagem
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+          </button>
+          <span class="direct-mail">ou chame direto no <a href="https://www.linkedin.com/in/bruno-lima-dev-full-stack-ia/" target="_blank" rel="noopener">LinkedIn</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <a href="#home" class="logo"><img class="logo-mark" src="favicon.svg" alt="" width="42" height="42" decoding="async"><span class="logo-text">Bruno Lima</span></a>
+      <ul class="footer-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#skills">Competências</a></li>
+        <li><a href="#work">Projetos</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#experience">Experiência</a></li>
+      </ul>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/bruno-lima-dev-full-stack-ia/" target="_blank" rel="noopener" aria-label="LinkedIn de Bruno Lima"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.16h4.52V23H.24zM8.34 8.16h4.33v2.03h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.01 5.42 6.92V23h-4.52v-7.23c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.81V23H8.34z"/></svg></a>
+        <a href="https://lnkd.in/enmNRcHH" target="_blank" rel="noopener" aria-label="Código de projeto no GitHub (via LinkedIn)"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.3 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Bruno Lima. Todos os direitos reservados · Fortaleza, CE</p>
+  </div>
+</footer>
+
+<button id="topBtn" aria-label="Voltar ao topo">↑</button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== Particle Drift (Originkit) — portado para JS puro, como fundo do site ===== */
+(function(){
+  const canvas = document.getElementById('particleDrift');
+  if (!canvas) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const gl = canvas.getContext('webgl', {alpha:true, antialias:false, depth:false, premultipliedAlpha:true, powerPreference:'low-power'});
+  if (!gl) { canvas.remove(); return; }
+
+  const CONFIG = {
+    baseColor:'#CB490B',      /* preset do Bruno Lima */
+    accentColor:'#FFB347',    /* âmbar da paleta do site (hover) */
+    dotSize:3.9, speed:0.6, direction:12,
+    hoverReach:190, hoverIntensity:1.35,
+    linkDistance:150, linkThickness:1, restAlpha:0.52
+  };
+  const MAX_DPR = 1.75, MAX_LINES = 5200, MAX_NODES = 240, EDGE = 20;
+
+  const LINE_VERT = `
+precision highp float;
+attribute vec2 a_p0; attribute vec2 a_p1; attribute vec2 a_corner; attribute vec3 a_shade;
+uniform vec2 uSize;
+varying float v_alpha; varying float v_mix; varying float v_off; varying float v_half;
+void main(){
+  vec2 d = a_p1 - a_p0; float len = max(length(d), 1e-5);
+  vec2 nrm = vec2(-d.y, d.x) / len;
+  float half_ = max(a_shade.z * 0.5, 0.35); float ext = half_ + 0.75;
+  vec2 p = mix(a_p0, a_p1, a_corner.x); p += nrm * a_corner.y * ext;
+  v_alpha = a_shade.x; v_mix = a_shade.y; v_off = a_corner.y * ext; v_half = half_;
+  gl_Position = vec4(p.x / uSize.x * 2.0 - 1.0, 1.0 - p.y / uSize.y * 2.0, 0.0, 1.0);
+}`;
+  const LINE_FRAG = `
+precision mediump float;
+uniform vec3 uBase, uAccent;
+varying float v_alpha; varying float v_mix; varying float v_off; varying float v_half;
+void main(){
+  float cov = clamp((v_half - abs(v_off)) / 0.75 + 0.5, 0.0, 1.0);
+  float a = v_alpha * cov; vec3 col = mix(uBase, uAccent, v_mix);
+  gl_FragColor = vec4(col * a, a);
+}`;
+  const DOT_VERT = `
+precision highp float;
+attribute vec2 a_pos; attribute float a_lit;
+uniform vec2 uSize; uniform float uDpr, uDot;
+varying float v_lit;
+void main(){
+  gl_PointSize = max(1.0, uDot * uDpr); v_lit = a_lit;
+  gl_Position = vec4(a_pos.x / uSize.x * 2.0 - 1.0, 1.0 - a_pos.y / uSize.y * 2.0, 0.0, 1.0);
+}`;
+  const DOT_FRAG = `
+precision mediump float;
+uniform vec3 uBase, uAccent; uniform float uRestAlpha;
+varying float v_lit;
+void main(){
+  float d = length(gl_PointCoord - 0.5) * 2.0;
+  float disc = 1.0 - smoothstep(0.72, 1.0, d);
+  vec3 col = mix(uBase, uAccent, v_lit);
+  float a = disc * mix(uRestAlpha, 1.0, v_lit);
+  if (a <= 0.004) discard;
+  gl_FragColor = vec4(col * a, a);
+}`;
+
+  function compile(type, src){
+    const sh = gl.createShader(type); if (!sh) return null;
+    gl.shaderSource(sh, src); gl.compileShader(sh);
+    if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) { gl.deleteShader(sh); return null; }
+    return sh;
+  }
+  function link(vsSrc, fsSrc){
+    const vs = compile(gl.VERTEX_SHADER, vsSrc), fs = compile(gl.FRAGMENT_SHADER, fsSrc);
+    if (!vs || !fs) return null;
+    const prog = gl.createProgram(); if (!prog) return null;
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+    return gl.getProgramParameter(prog, gl.LINK_STATUS) ? prog : null;
+  }
+  function parseColor(hex){
+    const n = parseInt(hex.slice(1), 16);
+    return [((n>>16)&255)/255, ((n>>8)&255)/255, (n&255)/255];
+  }
+  let seed = 20260824 >>> 0;
+  function R(){
+    seed += 0x6d2b79f5; let t = seed;
+    t = Math.imul(t ^ (t>>>15), t | 1);
+    t ^= t + Math.imul(t ^ (t>>>7), t | 61);
+    return ((t ^ (t>>>14)) >>> 0) / 4294967296;
+  }
+
+  const lineProg = link(LINE_VERT, LINE_FRAG);
+  const dotProg  = link(DOT_VERT, DOT_FRAG);
+  if (!lineProg || !dotProg) { canvas.remove(); return; }
+
+  const L = {
+    p0: gl.getAttribLocation(lineProg,'a_p0'), p1: gl.getAttribLocation(lineProg,'a_p1'),
+    corner: gl.getAttribLocation(lineProg,'a_corner'), shade: gl.getAttribLocation(lineProg,'a_shade'),
+    uSize: gl.getUniformLocation(lineProg,'uSize'), uBase: gl.getUniformLocation(lineProg,'uBase'),
+    uAccent: gl.getUniformLocation(lineProg,'uAccent')
+  };
+  const D = {
+    pos: gl.getAttribLocation(dotProg,'a_pos'), lit: gl.getAttribLocation(dotProg,'a_lit'),
+    uSize: gl.getUniformLocation(dotProg,'uSize'), uDpr: gl.getUniformLocation(dotProg,'uDpr'),
+    uDot: gl.getUniformLocation(dotProg,'uDot'), uRest: gl.getUniformLocation(dotProg,'uRestAlpha'),
+    uBase: gl.getUniformLocation(dotProg,'uBase'), uAccent: gl.getUniformLocation(dotProg,'uAccent')
+  };
+
+  const CORNERS = [[0,-1],[1,-1],[1,1],[0,-1],[1,1],[0,1]];
+  const lP0 = new Float32Array(MAX_LINES*6*2), lP1 = new Float32Array(MAX_LINES*6*2);
+  const lCorner = new Float32Array(MAX_LINES*6*2), lShade = new Float32Array(MAX_LINES*6*3);
+  for (let e=0; e<MAX_LINES; e++) for (let c=0; c<6; c++){
+    const k=(e*6+c)*2; lCorner[k]=CORNERS[c][0]; lCorner[k+1]=CORNERS[c][1];
+  }
+  function mkBuf(data, usage){ const b=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,b); gl.bufferData(gl.ARRAY_BUFFER,data,usage); return b; }
+  const bP0 = mkBuf(lP0.byteLength, gl.DYNAMIC_DRAW), bP1 = mkBuf(lP1.byteLength, gl.DYNAMIC_DRAW);
+  const bCorner = mkBuf(lCorner, gl.STATIC_DRAW),  bShade = mkBuf(lShade.byteLength, gl.DYNAMIC_DRAW);
+  const gPos = new Float32Array(MAX_NODES*2), gLit = new Float32Array(MAX_NODES);
+  const bGPos = mkBuf(gPos.byteLength, gl.DYNAMIC_DRAW), bGLit = mkBuf(gLit.byteLength, gl.DYNAMIC_DRAW);
+
+  function targetCount(){
+    const coarse = window.matchMedia('(pointer: coarse)').matches;
+    const n = Math.round((window.innerWidth * window.innerHeight) / (coarse ? 13000 : 7800));
+    return Math.max(55, Math.min(coarse ? 110 : 205, n));
+  }
+  let nCount = 0;
+  const nx = new Float32Array(MAX_NODES), ny = new Float32Array(MAX_NODES), nSpd = new Float32Array(MAX_NODES);
+  function buildNodes(n, w, h){
+    nCount = Math.min(n, MAX_NODES);
+    for (let i=0; i<nCount; i++){ nx[i]=R()*w; ny[i]=R()*h; nSpd[i]=(R()*0.4+0.1)*60; }
+  }
+
+  const ptr = {x:-10000, y:-10000};
+  window.addEventListener('pointermove', e => { ptr.x=e.clientX; ptr.y=e.clientY; }, {passive:true});
+  document.addEventListener('mouseleave', () => { ptr.x=-10000; ptr.y=-10000; });
+  window.addEventListener('blur', () => { ptr.x=-10000; ptr.y=-10000; });
+
+  const cb = parseColor(CONFIG.baseColor), ca = parseColor(CONFIG.accentColor);
+  const th = CONFIG.direction * Math.PI/180, dirX = Math.sin(th), dirY = Math.cos(th);
+  let raf = 0, last = performance.now(), builtW = 0, builtH = 0, lines = 0;
+
+  function pushLine(x0,y0,x1,y1,a,mix,wpx){
+    if (lines >= MAX_LINES) return;
+    for (let c=0; c<6; c++){
+      const k=(lines*6+c)*2, s3=(lines*6+c)*3;
+      lP0[k]=x0; lP0[k+1]=y0; lP1[k]=x1; lP1[k+1]=y1;
+      lShade[s3]=a; lShade[s3+1]=mix; lShade[s3+2]=wpx;
+    }
+    lines++;
+  }
+
+  function render(now){
+    const dt = reduceMotion ? 0 : Math.min(0.05, (now-last)/1000);
+    last = now;
+    const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
+    const cw = canvas.clientWidth || window.innerWidth, ch = canvas.clientHeight || window.innerHeight;
+    const bw = Math.max(1, Math.round(cw*dpr)), bh = Math.max(1, Math.round(ch*dpr));
+    if (canvas.width !== bw || canvas.height !== bh){ canvas.width=bw; canvas.height=bh; }
+    gl.viewport(0,0,bw,bh);
+
+    if (!nCount) buildNodes(targetCount(), cw, ch);
+    if (cw !== builtW || ch !== builtH){
+      if (builtW && builtH){
+        const sx = cw/builtW, sy = ch/builtH;
+        for (let i=0; i<nCount; i++){ nx[i]*=sx; ny[i]*=sy; }
+      }
+      builtW=cw; builtH=ch;
+    }
+
+    lines = 0;
+    const LINKD = CONFIG.linkDistance, L2 = LINKD*LINKD;
+    for (let i=0; i<nCount; i++){
+      nx[i] += nSpd[i]*dirX*dt*CONFIG.speed;
+      ny[i] += nSpd[i]*dirY*dt*CONFIG.speed;
+      if (nx[i] < -EDGE){ nx[i]=cw+EDGE; ny[i]=R()*ch; } else if (nx[i] > cw+EDGE){ nx[i]=-EDGE; ny[i]=R()*ch; }
+      if (ny[i] < -EDGE){ ny[i]=ch+EDGE; nx[i]=R()*cw; } else if (ny[i] > ch+EDGE){ ny[i]=-EDGE; nx[i]=R()*cw; }
+      const dx = ptr.x-nx[i], dy = ptr.y-ny[i], d = Math.sqrt(dx*dx+dy*dy);
+      const lit = (!reduceMotion && d < CONFIG.hoverReach) ? 1 : 0;
+      if (lit) pushLine(nx[i],ny[i],ptr.x,ptr.y, 0.5*(1-d/CONFIG.hoverReach)*CONFIG.hoverIntensity, 1, CONFIG.linkThickness);
+      gPos[i*2]=nx[i]; gPos[i*2+1]=ny[i]; gLit[i]=lit;
+    }
+
+    /* ligações entre partículas próximas (grade espacial) */
+    if (LINKD > 0){
+      const grid = new Map();
+      for (let i=0; i<nCount; i++){
+        const key = ((nx[i]/LINKD)|0) + ',' + ((ny[i]/LINKD)|0);
+        let bucket = grid.get(key); if (!bucket){ bucket=[]; grid.set(key,bucket); }
+        bucket.push(i);
+      }
+      for (let i=0; i<nCount && lines<MAX_LINES; i++){
+        const cx=(nx[i]/LINKD)|0, cy=(ny[i]/LINKD)|0;
+        for (let gx=cx-1; gx<=cx+1; gx++) for (let gy=cy-1; gy<=cy+1; gy++){
+          const bucket = grid.get(gx+','+gy); if (!bucket) continue;
+          for (const j of bucket){
+            if (j<=i) continue;
+            const dx=nx[i]-nx[j], dy=ny[i]-ny[j], dd=dx*dx+dy*dy;
+            if (dd>=L2) continue;
+            pushLine(nx[i],ny[i],nx[j],ny[j], 0.22*(1-Math.sqrt(dd)/LINKD), 0, CONFIG.linkThickness);
+            if (lines>=MAX_LINES) break;
+          }
+        }
+      }
+    }
+
+    gl.clearColor(0,0,0,0); gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.disable(gl.DEPTH_TEST); gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+
+    if (lines > 0){
+      gl.useProgram(lineProg);
+      const verts = lines*6;
+      gl.bindBuffer(gl.ARRAY_BUFFER,bP0); gl.bufferSubData(gl.ARRAY_BUFFER,0,lP0.subarray(0,verts*2));
+      gl.enableVertexAttribArray(L.p0); gl.vertexAttribPointer(L.p0,2,gl.FLOAT,false,0,0);
+      gl.bindBuffer(gl.ARRAY_BUFFER,bP1); gl.bufferSubData(gl.ARRAY_BUFFER,0,lP1.subarray(0,verts*2));
+      gl.enableVertexAttribArray(L.p1); gl.vertexAttribPointer(L.p1,2,gl.FLOAT,false,0,0);
+      gl.bindBuffer(gl.ARRAY_BUFFER,bCorner);
+      gl.enableVertexAttribArray(L.corner); gl.vertexAttribPointer(L.corner,2,gl.FLOAT,false,0,0);
+      gl.bindBuffer(gl.ARRAY_BUFFER,bShade); gl.bufferSubData(gl.ARRAY_BUFFER,0,lShade.subarray(0,verts*3));
+      gl.enableVertexAttribArray(L.shade); gl.vertexAttribPointer(L.shade,3,gl.FLOAT,false,0,0);
+      gl.uniform2f(L.uSize,cw,ch);
+      gl.uniform3f(L.uBase,cb[0],cb[1],cb[2]); gl.uniform3f(L.uAccent,ca[0],ca[1],ca[2]);
+      gl.drawArrays(gl.TRIANGLES,0,verts);
+      gl.disableVertexAttribArray(L.p0); gl.disableVertexAttribArray(L.p1);
+      gl.disableVertexAttribArray(L.corner); gl.disableVertexAttribArray(L.shade);
+    }
+
+    if (nCount > 0){
+      gl.useProgram(dotProg);
+      gl.bindBuffer(gl.ARRAY_BUFFER,bGPos); gl.bufferSubData(gl.ARRAY_BUFFER,0,gPos.subarray(0,nCount*2));
+      gl.enableVertexAttribArray(D.pos); gl.vertexAttribPointer(D.pos,2,gl.FLOAT,false,0,0);
+      gl.bindBuffer(gl.ARRAY_BUFFER,bGLit); gl.bufferSubData(gl.ARRAY_BUFFER,0,gLit.subarray(0,nCount));
+      gl.enableVertexAttribArray(D.lit); gl.vertexAttribPointer(D.lit,1,gl.FLOAT,false,0,0);
+      gl.uniform2f(D.uSize,cw,ch); gl.uniform1f(D.uDpr,dpr);
+      gl.uniform1f(D.uDot,CONFIG.dotSize); gl.uniform1f(D.uRest,CONFIG.restAlpha);
+      gl.uniform3f(D.uBase,cb[0],cb[1],cb[2]); gl.uniform3f(D.uAccent,ca[0],ca[1],ca[2]);
+      gl.drawArrays(gl.POINTS,0,nCount);
+      gl.disableVertexAttribArray(D.pos); gl.disableVertexAttribArray(D.lit);
+    }
+
+    if (!reduceMotion) raf = requestAnimationFrame(render);
+  }
+  raf = requestAnimationFrame(render);
+  document.addEventListener('visibilitychange', () => { last = performance.now(); });
+})();
+</script>
+
+<script>
+// Preferência de movimento reduzido
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Menu mobile
+const navLinks = document.getElementById('navLinks');
+const hamburger = document.getElementById('hamburger');
+function setMenu(open){
+  navLinks.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+  hamburger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+}
+hamburger.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+window.addEventListener('resize', () => { if (window.innerWidth > 880) setMenu(false); }, {passive:true});
+
+// Barra de progresso + voltar ao topo
+const topBtn = document.getElementById('topBtn');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const max = document.documentElement.scrollHeight - innerHeight;
+  document.getElementById('progress').style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+  topBtn.classList.toggle('show', scrolled > 500);
+}, {passive:true});
+topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:prefersReducedMotion ? 'auto' : 'smooth'}));
+
+// Animação de entrada ao rolar
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    revealObs.unobserve(e.target);
+  });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// Contadores animados
+function runCounter(el){
+  if (el.dataset.done) return; el.dataset.done = 1;
+  const target = +el.dataset.target, dur = 1400, start = performance.now();
+  (function tick(now){
+    const p = Math.min((now - start) / dur, 1);
+    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(tick);
+  })(start);
+}
+const cntObs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){ runCounter(e.target); cntObs.unobserve(e.target); }
+}), {threshold:.4});
+document.querySelectorAll('.counter').forEach(c => {
+  if (prefersReducedMotion) { c.textContent = c.dataset.target; c.dataset.done = 1; return; }
+  c.textContent = '0';
+  cntObs.observe(c);
+});
+
+// Link ativo no menu conforme a seção
+const navObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting){
+      navLinks.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, {rootMargin:'-40% 0px -55% 0px'});
+['home','about','skills','work','services','experience','contact'].forEach(id => {
+  const s = document.getElementById(id); if (s) navObs.observe(s);
+});
+
+// Formulário de contato (demonstração no front-end)
+const toast = document.getElementById('toast');
+let toastTimer;
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 5200);
+}
+const formFields = {
+  name: document.getElementById('fName'),
+  email: document.getElementById('fEmail'),
+  msg: document.getElementById('fMsg')
+};
+Object.values(formFields).forEach(field =>
+  field.addEventListener('input', () => field.removeAttribute('aria-invalid'))
+);
+function invalidField(field, msg){
+  field.setAttribute('aria-invalid', 'true');
+  showToast(msg);
+  field.focus();
+}
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = formFields.name.value.trim();
+  const email = formFields.email.value.trim();
+  const msg = formFields.msg.value.trim();
+  if (!name) return invalidField(formFields.name, '⚠ Informe seu nome, por favor.');
+  if (!email) return invalidField(formFields.email, '⚠ Informe seu e-mail, por favor.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return invalidField(formFields.email, '⚠ Informe um e-mail válido, por favor.');
+  if (!msg) return invalidField(formFields.msg, '⚠ Escreva sua mensagem, por favor.');
+  showToast('🔥 Obrigado, ' + name.split(' ')[0] + '! Mensagem validada. Como este formulário é demonstrativo, finalize pelo LinkedIn para eu recebê-la.');
+  e.target.reset();
+  Object.values(formFields).forEach(field => field.removeAttribute('aria-invalid'));
+});
+</script>
+</body>
+</html>
